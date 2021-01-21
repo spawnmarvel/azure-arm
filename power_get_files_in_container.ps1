@@ -1,4 +1,4 @@
-
+# Import-Module -Name Az
 # If you have a storage account, a container (blob) and a file in that blob, i.e a files called test.ps1 or what ever
 # You can access the blob and get that file and store it in home dir, ie transfer it.
 $key = Get-Content key.txt # go to the storage account\settings\access keys and cp the key 1 or key2, store it in the txt file
@@ -17,3 +17,5 @@ Write-Host $blobs.Name
 $file = Get-AzureStorageBlobContent -Container $Container.Name -Context $StorageContext $blobs.Name
 
 
+# Error offline, nut not in shell in the portal
+# https://stackoverflow.com/questions/27722205/new-azurestoragecontext-is-not-recognized/27771597

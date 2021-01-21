@@ -14,5 +14,6 @@ Stuff about Azure, ARM and shell
 
 ## Create a file
 ### "ps1" | Out-File get_storage.ps1
+###  New-Item -ItemType File -Path \.gitignore.
 
 
