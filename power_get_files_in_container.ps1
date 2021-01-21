@@ -1,14 +1,6 @@
 
 # If you have a storage account, a container (blob) and a file in that blob, i.e a files called test.ps1 or what ever
 # You can access the blob and get that file and store it in home dir, ie transfer it.
-
-$resourceGr = "boose-rg"
-$group = Get-AzResource -ResourceGroupName $resourceGr
-# just loop over rg's
-foreach ($g in $group) {
-    Write-Host $g.Name + " " $g.Sku.Name
-    
-}
 $key = Get-Content key.txt # go to the storage account\settings\access keys and cp the key 1 or key2, store it in the txt file
 # set the context, go to storage account and get the key
 $StorageContext = New-AzureStorageContext -StorageAccountName "booseewrqh6admd5mg" -StorageAccountKey $key
