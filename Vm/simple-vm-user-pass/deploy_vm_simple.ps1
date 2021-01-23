@@ -6,7 +6,7 @@ $resourceGr = New-AzResourceGroup -Name $rgName -Location "west europe" -Force
 $templateFile = "C:\giti\azure-arm\Vm\simple-vm-user-pass\vm_template.json"
 # parameter file
 $paramterFile = "C:\giti\azure-arm\Vm\simple-vm-user-pass\vm_paramters.json"
-# jepp secure it, and get it from prompt, venet like this...
+# jepp secure it, and get it from prompt, not like this...
 $userName = "testadmin100" # testAdmin100
 $passWordSecure = ConvertTo-SecureString "Thisisbadyes123" -AsPlainText -Force
 # test it
@@ -17,7 +17,7 @@ $passWordSecure = ConvertTo-SecureString "Thisisbadyes123" -AsPlainText -Force
 New-AzResourceGroupDeployment -Name buildTestVm `
  -ResourceGroupName $resourceGr.ResourceGroupName `
  -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -Verbose
- 
+
 
 
 

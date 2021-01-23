@@ -22,7 +22,12 @@
 #### Download the template and parameter for automation
 
 #### Run deploy_vm_simple.ps1 for testing, change to -Verbose for actual deploy
-```ps1 
+```ps1
+# template file
+$templateFile = "C:\giti\azure-arm\Vm\simple-vm-user-pass\vm_template.json"
+# parameter file
+# [...]
+$paramterFile = "C:\giti\azure-arm\Vm\simple-vm-user-pass\vm_paramters.json"
 New-AzResourceGroupDeployment -Name buildTestVm `
   -ResourceGroupName $resourceGr.ResourceGroupName `
   -TemplateFile $templateFile -TemplateParameterFile $paramterFile `
