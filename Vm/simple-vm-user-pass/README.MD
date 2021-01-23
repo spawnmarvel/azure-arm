@@ -1,4 +1,4 @@
-# Simple vm
+# Simple vm with username and password from script
 ### If you have a rg and a vnet, here is how to make a vm with the following installed:
 #### (Make it in the portal first, without creating it, just get to the finish step and download for automation.)
 
