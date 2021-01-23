@@ -21,8 +21,10 @@
 
 ### Download the template and parameter for automation
 
-[![Screenshot](setup_1.jpg)
 
 ## Verify the build
 * Open putty and connect
+[![Screenshot](putty.jpg)
+
+## Build and steps
 [![Screenshot](setup_1.jpg)
