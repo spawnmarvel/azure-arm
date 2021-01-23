@@ -21,6 +21,13 @@
 
 #### Download the template and parameter for automation
 
+#### Run deploy_vm_simple.ps1 for testing, change to -Verbose for actual deploy
+```ps1 
+New-AzResourceGroupDeployment -Name buildTestVm `
+  -ResourceGroupName $resourceGr.ResourceGroupName `
+  -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -WhatIf
+```
+
 
 ###  Verify the build
 ####  Open putty and connect
