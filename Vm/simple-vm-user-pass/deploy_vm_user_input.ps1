@@ -19,7 +19,7 @@ Write-Host "Secured: " $passWordSecure ", " $creds
 
 Write-Host "Begin construct deployment....."
 # create the resource group
-$rgName = "testit-rg"
+$rgName = "testit2-rg"
 $resourceGr = New-AzResourceGroup -Name $rgName -Location "west europe" -Force
 Write-Host "Resource group created:"
 Write-Host $resourceGr.ResourceGroupName $resourceGr.Location

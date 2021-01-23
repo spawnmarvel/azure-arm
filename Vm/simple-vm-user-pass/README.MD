@@ -28,7 +28,8 @@ New-AzResourceGroupDeployment -Name buildTestVm `
   -TemplateFile $templateFile -TemplateParameterFile $paramterFile `
   -adminUsername $userName -adminPassword $passWordSecure -WhatIf
 ```
-
+### Secure the password if not using keyvault
+#### Run deploy_vm_user_input.ps1 for testing, change to -Verbose for actual deploy
 
 ###  Verify the build
 ####  Open putty and connect
