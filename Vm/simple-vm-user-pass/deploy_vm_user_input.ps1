@@ -24,7 +24,7 @@ $resourceGr = New-AzResourceGroup -Name $rgName -Location "west europe" -Force
 Write-Host "Resource group created:"
 Write-Host $resourceGr.ResourceGroupName $resourceGr.Location
 
-# Virtual machine name test-vm
+# Virtual machine name test-vm8080
 # Availability zone, 1
 # Ubuntu Server 18.04 LTS - GEN1
 # Standard_BS1s - 1 vpcu, 1 gb memory A$12/mon
@@ -33,10 +33,11 @@ Write-Host $resourceGr.ResourceGroupName $resourceGr.Location
 # Disk standard, HDD
 # Virtual net, testit-vnet
 # Subnet default, 10.0.0.0/24
-# Public ip, (new) tets-vm-ip
+# Public ip, (new) test-vm-ip
 # Public inbound ports, allow SHH 22
 # Boot diagnostics, Disable
 # Download template for automation
+# extensions is emptty now, will add when template works!!!
 
 
 

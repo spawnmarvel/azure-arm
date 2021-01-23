@@ -1,48 +1,21 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "prefix": {
-            "type": "string",
-            "maxLength":6,
-            "minLength":3,
-            "metadata" : {
-                "description": "Prefix used"
-            }
-        },
         "location": {
-            "type": "string",
-            "defaultValue": "[resourceGroup().location]"
+            "type": "string"
         },
         "networkInterfaceName": {
-            "type": "string",
-            "defaultValue": "[concat(parameters('prefix'), '-vm-nic')]"
+            "type": "string"
         },
         "networkSecurityGroupName": {
-            "type": "string",
-            "defaultValue": "[concat(parameters('prefix'), '-vm-nsg')]"
+            "type": "string"
         },
         "networkSecurityGroupRules": {
-            "type": "array",
-             "defaultValue": [
-                {
-                    "name": "SSH",
-                    "properties": {
-                        "priority": 300,
-                        "protocol": "TCP",
-                        "access": "Allow",
-                        "direction": "Inbound",
-                        "sourceAddressPrefix": "*",
-                        "sourcePortRange": "*",
-                        "destinationAddressPrefix": "*",
-                        "destinationPortRange": "22"
-                    }
-                }
-            ]
+            "type": "array"
         },
         "subnetName": {
-            "type": "string",
-            "defaultValue": "[concat(parameters('prefix'), '-vm-s-net')]"
+            "type": "string"
         },
         "virtualNetworkId": {
             "type": "string"
@@ -60,6 +33,9 @@
             "type": "string"
         },
         "virtualMachineComputerName": {
+            "type": "string"
+        },
+        "virtualMachineRG": {
             "type": "string"
         },
         "osDiskType": {

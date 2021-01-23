@@ -2,12 +2,14 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-
-        "prefix" :{
-            "value": "test"
-        },
         "location": {
             "value": "westeurope"
+        },
+        "networkInterfaceName": {
+            "value": "test-vm8080546"
+        },
+        "networkSecurityGroupName": {
+            "value": "test-vm8080-nsg"
         },
         "networkSecurityGroupRules": {
             "value": [
@@ -30,10 +32,10 @@
             "value": "default"
         },
         "virtualNetworkId": {
-            "value": "/subscriptions/f2da8212-69a4-42ed-a0b8-bfd2ab1b11c8/resourceGroups/testit-rg/providers/Microsoft.Network/virtualNetworks/testit-vnet"
+            "value": "/subscriptions/f2da8212-69a4-42ed-a0b8-bfd2ab1b11c8/resourceGroups/testit2-rg/providers/Microsoft.Network/virtualNetworks/testit2-vnet"
         },
         "publicIpAddressName": {
-            "value": "test-vm-ip"
+            "value": "test-vm8080-ip"
         },
         "publicIpAddressType": {
             "value": "Static"
@@ -42,13 +44,13 @@
             "value": "Standard"
         },
         "virtualMachineName": {
-            "value": "test-vm"
+            "value": "test-vm8080"
         },
         "virtualMachineComputerName": {
-            "value": "test-vm"
+            "value": "test-vm8080"
         },
         "virtualMachineRG": {
-            "value": "testit-rg"
+            "value": "testit2-rg"
         },
         "osDiskType": {
             "value": "Standard_LRS"
@@ -57,7 +59,7 @@
             "value": "Standard_B1s"
         },
         "adminUsername": {
-            "value": "testadmin100"
+            "value": null
         },
         "adminPassword": {
             "value": null

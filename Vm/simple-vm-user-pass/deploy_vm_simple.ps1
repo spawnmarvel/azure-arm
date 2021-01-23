@@ -1,12 +1,23 @@
 # connect
 # Connect-AzAccount
-
-$rgName = "testit-rg"
+$rgName = "testit2-rg"
 $resourceGr = New-AzResourceGroup -Name $rgName -Location "west europe" -Force
-
+# template file
 $templateFile = "C:\giti\azure-arm\Vm\simple-vm-user-pass\vm_template.json"
+# parameter file
 $paramterFile = "C:\giti\azure-arm\Vm\simple-vm-user-pass\vm_paramters.json"
-$passWordSecure = ConvertTo-SecureString "testAdmin100" -AsPlainText -Force
-New-AzResourceGroupDeployment -Name addOutputs -ResourceGroupName $resourceGr -TemplateFile $templateFile -adminPassword $passWordSecure -WhatIf
+# jepp secure it, and get it from prompt, venet like this...
+$userName = "testadmin100" # testAdmin100
+$passWordSecure = ConvertTo-SecureString "Thisisbadyes123" -AsPlainText -Force
+# test it
+# New-AzResourceGroupDeployment -Name buildTestVm `
+#  -ResourceGroupName $resourceGr.ResourceGroupName `
+#  -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -WhatIf
+# verbose or debug
+New-AzResourceGroupDeployment -Name buildTestVm `
+ -ResourceGroupName $resourceGr.ResourceGroupName `
+ -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -Verbose
+ 
+
 
 
