@@ -12,6 +12,5 @@ foreach ($g in $group) {
     Write-Host $g.Name + " " $g.Sku.Name
     
 }
-
-# Delete all resources
+# Delete all resources and the group
 Get-AzResourceGroup -Name $resourceGr | Remove-AzResourceGroup -Force -AsJob

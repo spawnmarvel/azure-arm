@@ -25,7 +25,8 @@
 ```ps1 
 New-AzResourceGroupDeployment -Name buildTestVm `
   -ResourceGroupName $resourceGr.ResourceGroupName `
-  -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -WhatIf
+  -TemplateFile $templateFile -TemplateParameterFile $paramterFile `
+  -adminUsername $userName -adminPassword $passWordSecure -WhatIf
 ```
 
 
