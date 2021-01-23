@@ -1,8 +1,8 @@
 # Simple vm
-## If you have a rg and a vnet, here is how to make a vm with the following installed:
-## Make it in the portal first, without creating it, just get to the finish step and download for automation
+### If you have a rg and a vnet, here is how to make a vm with the following installed:
+### Make it in the portal first, without creating it, just get to the finish step and download for automation
 
-## rg used, testit2-rg, vnet testit2-vnet
+### rg used, testit2-rg, vnet testit2-vnet
 
 
 * Virtual machine name test-vm8080
@@ -19,12 +19,13 @@
 * Boot diagnostics, Disable
 * extensions is empty now, will add when template works
 
-### Download the template and parameter for automation
+#### Download the template and parameter for automation
 
 
-## Verify the build
-* Open putty and connect
+###  Verify the build
+####  Open putty and connect
 [![Screenshot](putty.jpg)
 
-## Build and steps
+# 
+### Build and steps
 [![Screenshot](setup_1.jpg)
