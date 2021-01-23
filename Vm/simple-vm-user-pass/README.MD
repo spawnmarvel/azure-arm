@@ -27,4 +27,4 @@
 * Open putty
 * 
 * 
-[![Screenshot](setup.jpg)
+[![Screenshot](setup_1.jpg)
