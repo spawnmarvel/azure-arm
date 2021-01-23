@@ -16,3 +16,5 @@ $creds = New-Object System.Management.Automation.PSCredential($userName, $passWo
 
 Write-Host "Provided: " $userName ", " $passWord
 Write-Host "Secured: " $passWordSecure ", " $creds
+
+Write-Host "Begin construct deployment....."
