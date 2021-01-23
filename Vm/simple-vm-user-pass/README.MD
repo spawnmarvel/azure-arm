@@ -1,6 +1,6 @@
 # Simple vm
 ### If you have a rg and a vnet, here is how to make a vm with the following installed:
-### Make it in the portal first, without creating it, just get to the finish step and download for automation
+#### () Make it in the portal first, without creating it, just get to the finish step and download for automation.)
 
 ### rg used, testit2-rg, vnet testit2-vnet
 
