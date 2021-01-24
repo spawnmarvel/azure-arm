@@ -1,17 +1,17 @@
 # Simple vm with username and password from script
 
-## If you have a rg and a vnet, here is how to make a vm with the following installed and connect it to the vnet
+## If you have a rg and a vnet, here is how to make a vm and include it the vnet with below mentioned installed and connect it to the vnet
 ## (Make it in the portal first, without creating it, just get to the finish step and download for automation.)
 
-## Resource group and vnet used: 
+## 1 Resource group and vnet used: 
 * testit2-rg
 * testit2-vnet
 
-## A note about vnet:
+## 1.1  A note about vnet:
 ## When you create or update a virtual network in your subscription, Network Watcher will be enabled automatically in your Virtual Network's region. There is no impact to your resources or associated charge for automatically enabling Network Watcher. With the vnet mentionedwe got the folowing resources:
 [![Screenshot](x_networkwatcher.jpg)
 
-## The information provided in the Portal:
+## 2 The information provided in the Portal:
 
 * Virtual machine name test-vm8080
 * Availability zone, 1
@@ -27,8 +27,10 @@
 * Boot diagnostics, Disable
 * extensions is empty now, will add when template works
 
-## Download the template and parameter for automation
-## Changes in the template, most important is (if you not want to change anything just (a rg, templatefile, paramterfile and New-AzResourceGroupDeployment with just tha main paramters(rg, tempfile, paramfile and user + password))):
+## 3 Download the template and parameter for automation
+## 3.1 Changes in the template, most important is described in the ps1 section
+### (3.2 ) If you do not not want to change anything as described in 3.1, just provide a rg, templatefile, paramterfile and New-AzResourceGroupDeployment with just tha main paramters(rg, tempfile, paramfile and user + password):
+## Ps1:
 ```ps1
 # From the template file you download you get the virtual network id as:
 "virtualNetworkId": {
@@ -52,7 +54,7 @@ $sub = Get-AzSubscription
 $vnetId = "/subscriptions/" + $sub.Id +  "/resourceGroups/" + $resourceGr.ResourceGroupName + "/providers/Microsoft.Network/virtualNetworks/" +$vnet
 ```
 
-## Run deploy_vm_simple.ps1 for testing, change to -Verbose for actual deploy
+## 4 Run deploy_vm_simple.ps1 for testing, change to -Verbose for actual deploy
 ```ps1
 # template file
 $templateFile = "C:\giti\azure-arm\Vm\simple-vm-user-pass\vm_template.json"
@@ -64,12 +66,12 @@ New-AzResourceGroupDeployment -Name buildTestVm `
   -TemplateFile $templateFile -TemplateParameterFile $paramterFile `
   -adminUsername $userName -adminPassword $passWordSecure -WhatIf
 ```
-## Secure the password if not using keyvault
-## Run deploy_vm_user_input.ps1 for testing, change to -Verbose for actual deploy
+## 4.1 Secure the password if not using keyvault
+## 4.2 (TDB) Run deploy_vm_user_input.ps1 for testing, change to -Verbose for actual deploy
 
-##  Verify the build
+## 5  Verify the build
 ##  Open putty and connect
 [![Screenshot](x_putty.jpg)
 
-## Build, steps and result
+## 6 Build, steps and result
 [![Screenshot](x_setup_1.jpg)
