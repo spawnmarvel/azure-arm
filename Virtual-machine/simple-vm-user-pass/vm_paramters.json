@@ -2,9 +2,7 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "location": {
-            "value": "westeurope"
-        },
+       
         "networkInterfaceName": {
             "value": "test-vm8080546"
         },
@@ -28,11 +26,12 @@
                 }
             ]
         },
+        "virtualNetworkId": {
+            "value": null
+            
+        },
         "subnetName": {
             "value": "default"
-        },
-        "virtualNetworkId": {
-            "value": "/subscriptions/nrnrnrnnr-should be a nr/resourceGroups/testit2-rg/providers/Microsoft.Network/virtualNetworks/testit2-vnet"
         },
         "publicIpAddressName": {
             "value": "test-vm8080-ip"

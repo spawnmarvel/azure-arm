@@ -1,5 +1,5 @@
 # Simple vm with username and password from script
-### If you have a rg and a vnet, here is how to make a vm with the following installed:
+### If you have a rg and a vnet, here is how to make a vm with the following installed and connect it to the vnet
 #### (Make it in the portal first, without creating it, just get to the finish step and download for automation.)
 
 ### rg used, testit2-rg, vnet testit2-vnet
@@ -20,6 +20,29 @@
 * extensions is empty now, will add when template works
 
 #### Download the template and parameter for automation
+### Changes in the template, most important is:
+```ps1
+# From the template file you download you get the virtual network id as:
+"virtualNetworkId": {
+            "type": "string"
+        },
+# From the parameter file you download you get the virtual network id as:
+"virtualNetworkId": {
+            "value": "/subscriptions/an-id-xxxxxx-x-x-x-x-x-x-x-x/resourceGroups/testit2-rg/providers/Microsoft.Network/virtualNetworks/testit2-vnet"
+            
+        },
+# We changed it to get it dynamically:
+# From the parameter file you download, we changed to:
+ "virtualNetworkId": {
+            "value": null
+            
+        },
+# And feed it like this:
+$sub = Get-AzSubscription
+# [..]
+# construct the virtualNetworkId (is has been removed from the downloaded paramter file)
+$vnetId = "/subscriptions/" + $sub.Id +  "/resourceGroups/" + $resourceGr.ResourceGroupName + "/providers/Microsoft.Network/virtualNetworks/" +$vnet
+```
 
 #### Run deploy_vm_simple.ps1 for testing, change to -Verbose for actual deploy
 ```ps1
