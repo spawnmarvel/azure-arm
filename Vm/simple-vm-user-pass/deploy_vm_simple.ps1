@@ -1,3 +1,4 @@
+Write-Host "Get context from rg regaring subscriptions feed it to virtualNetworkId"
 # connect
 # Connect-AzAccount
 $rgName = "testit2-rg"

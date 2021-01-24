@@ -32,7 +32,7 @@
             "value": "default"
         },
         "virtualNetworkId": {
-            "value": "/subscriptions/f2da8212-69a4-42ed-a0b8-bfd2ab1b11c8/resourceGroups/testit2-rg/providers/Microsoft.Network/virtualNetworks/testit2-vnet"
+            "value": "/subscriptions/nrnrnrnnr-should be a nr/resourceGroups/testit2-rg/providers/Microsoft.Network/virtualNetworks/testit2-vnet"
         },
         "publicIpAddressName": {
             "value": "test-vm8080-ip"
