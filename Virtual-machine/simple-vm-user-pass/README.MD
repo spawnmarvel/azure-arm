@@ -18,7 +18,7 @@
 * Availability zone, 1
 * Ubuntu Server 18.04 LTS - GEN1
 * Standard_BS1s - 1 vpcu, 1 gb memory A$12/mon
-* Administrator account password
+* Administrator account + password
 * Public inbound ports, allow SSH 22
 * Disk standard, HDD
 * Virtual net, testit-vnet
