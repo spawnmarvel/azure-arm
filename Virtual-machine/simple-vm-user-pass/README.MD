@@ -27,7 +27,7 @@
 * extensions is empty now, will add when template works
 
 #### Download the template and parameter for automation
-### Changes in the template, most important is:
+### Changes in the template, most important is (if you not want to change anything just (a rg, templatefile, paramterfile and New-AzResourceGroupDeployment with just tha main paramters(rg, tempfile, paramfile and user + password))):
 ```ps1
 # From the template file you download you get the virtual network id as:
 "virtualNetworkId": {
