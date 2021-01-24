@@ -35,9 +35,6 @@
         "virtualMachineComputerName": {
             "type": "string"
         },
-        "virtualMachineRG": {
-            "type": "string"
-        },
         "osDiskType": {
             "type": "string"
         },
@@ -116,7 +113,7 @@
         {
             "name": "[parameters('virtualMachineName')]",
             "type": "Microsoft.Compute/virtualMachines",
-            "apiVersion": "2020-12-01",
+            "apiVersion": "2019-07-01",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "[concat('Microsoft.Network/networkInterfaces/', parameters('networkInterfaceName'))]"
