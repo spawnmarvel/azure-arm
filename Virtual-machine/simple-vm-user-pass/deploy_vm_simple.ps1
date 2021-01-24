@@ -1,5 +1,6 @@
+Write-Host "Started deploy simple vm" -ForegroundColor Green
 Write-Host "Create the rg (it is automatically created if you have not) and vnet (you must create) before you start" -ForegroundColor Yellow
-Write-Host "Get context from rg regaring subscriptions and feed it to virtualNetworkId if you need to keep it safe" -ForegroundColor Yellow
+Write-Host "Get it from subscription and feed it to virtualNetworkId if you need to keep it safe" -ForegroundColor Yellow
 # connect to azure first
 # Connect-AzAccount
 $sub = Get-AzSubscription
@@ -9,13 +10,22 @@ $rgName = "testit2-rg"
 $resourceGr = New-AzResourceGroup -Name $rgName -Location "west europe" -Force
 #  check what we have before we start
 Write-Host "Get resources in : " $rgName
-$group = Get-AzResource -ResourceGroupName $resourceGr.ResourceGroupName
+try {
+  $group = Get-AzResource -ResourceGroupName $resourceGr.ResourceGroupName
 
-foreach ($g in $group) {
+  foreach ($g in $group) {
     Write-Host $g.Name + " " $g.Sku.Name
+  }
 }
+catch {
+  # $_
+  Write-Host "The resource group does not exist " $rgName "Exit script" -ForegroundColor Red
+  Return
+  
+}
+Write-Host "Continue..." -ForegroundColor Green
 # construct the virtualNetworkId (is has been removed from the downloaded paramter file)
-$vnetId = "/subscriptions/" + $sub.Id +  "/resourceGroups/" + $resourceGr.ResourceGroupName + "/providers/Microsoft.Network/virtualNetworks/" +$vnet
+$vnetId = "/subscriptions/" + $sub.Id + "/resourceGroups/" + $resourceGr.ResourceGroupName + "/providers/Microsoft.Network/virtualNetworks/" + $vnet
 Write-Host $vnetId
 # template file
 $templateFile = "C:\giti\azure-arm\Virtual-machine\simple-vm-user-pass\vm_template.json"
@@ -29,11 +39,12 @@ New-AzResourceGroupDeployment -Name buildTestVm `
   -ResourceGroupName $resourceGr.ResourceGroupName `
   -virtualNetworkId $vnetId `
   -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -WhatIf
-# verbose or debug
+# verbose or debug for actually deploying it
 # New-AzResourceGroupDeployment -Name buildTestVm `
 # -ResourceGroupName $resourceGr.ResourceGroupName `
 # -virtualNetworkId $vnetId `
 # -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -Verbose
+
 
 
 
