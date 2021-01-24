@@ -35,25 +35,25 @@
 
 ## 3.3 Ps1:
 ```ps1
-# From the template file you download you get the virtual network id as:
+# From the template file you download you have a parameter virtual network id as:
 "virtualNetworkId": {
             "type": "string"
         },
-# From the parameter file you download you get the virtual network id as:
+# From the parameter file you download you have the value for parameter virtual network id as:
 "virtualNetworkId": {
             "value": "/subscriptions/an-id-xxxxxx-x-x-x-x-x-x-x-x/resourceGroups/testit2-rg/providers/Microsoft.Network/virtualNetworks/testit2-vnet"
             
         },
-# We changed it to get it dynamically:
-# From the parameter file you download, we changed to:
+# We changed it to get it dynamically and keep it secure only to the session:
+# From the parameter file you download where the value were stored, we change it to:
  "virtualNetworkId": {
             "value": null
             
         },
-# And feed it like this:
+# And get it like this:
 $sub = Get-AzSubscription
 # [..]
-# construct the virtualNetworkId (is has been removed from the downloaded parameter file used here)
+# construct the virtualNetworkId (is has been removed from the downloaded parameter file used here) and it is ready to use
 $vnetId = "/subscriptions/" + $sub.Id +  "/resourceGroups/" + $resourceGr.ResourceGroupName + "/providers/Microsoft.Network/virtualNetworks/" +$vnet
 ```
 
