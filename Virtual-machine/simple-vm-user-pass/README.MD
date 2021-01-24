@@ -57,7 +57,7 @@ $sub = Get-AzSubscription
 $vnetId = "/subscriptions/" + $sub.Id +  "/resourceGroups/" + $resourceGr.ResourceGroupName + "/providers/Microsoft.Network/virtualNetworks/" +$vnet
 ```
 
-## 4 Run deploy_vm_simple.ps1 for testing, change to -Verbose for actual deploy
+## 4 Run deploy_vm_simple.ps1 for testing with -WhatIf, change to -Verbose for actual deploy
 ```ps1
 # template file
 $templateFile = "C:\giti\azure-arm\Vm\simple-vm-user-pass\vm_template.json"
@@ -70,7 +70,7 @@ New-AzResourceGroupDeployment -Name buildTestVm `
   -adminUsername $userName -adminPassword $passWordSecure -WhatIf
 ```
 ## 4.1 Secure the password if not using keyvault
-## 4.2 (TDB) Run deploy_vm_user_input.ps1 for testing, change to -Verbose for actual deploy
+## 4.2 (TDB) Run deploy_vm_user_input.ps1 for testing with -WhatIf, change to -Verbose for actual deploy
 
 ## 5  Verify the build
 ##  Open putty and connect
