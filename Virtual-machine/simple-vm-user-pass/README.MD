@@ -30,6 +30,7 @@
 ## 3 Download the template and parameter for automation
 ## 3.1 Changes in the template, most important is described in the ps1 section
 ### (3.2 ) If you do not not want to change anything as described in 3.1, just provide a rg, templatefile, paramterfile and New-AzResourceGroupDeployment with just tha main paramters(rg, tempfile, paramfile and user + password):
+
 ## Ps1:
 ```ps1
 # From the template file you download you get the virtual network id as:
@@ -50,7 +51,7 @@
 # And feed it like this:
 $sub = Get-AzSubscription
 # [..]
-# construct the virtualNetworkId (is has been removed from the downloaded paramter file)
+# construct the virtualNetworkId (is has been removed from the downloaded parameter file used here)
 $vnetId = "/subscriptions/" + $sub.Id +  "/resourceGroups/" + $resourceGr.ResourceGroupName + "/providers/Microsoft.Network/virtualNetworks/" +$vnet
 ```
 
