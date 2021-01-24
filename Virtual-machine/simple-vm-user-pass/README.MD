@@ -5,7 +5,8 @@
 ### rg used, testit2-rg, vnet testit2-vnet
 
 #### A note about vnet:
-#### When you create or update a virtual network in your subscription, Network Watcher will be enabled automatically in your Virtual Network's region. There is no impact to your resources or associated charge for automatically enabling Network Watcher.
+#### When you create or update a virtual network in your subscription, Network Watcher will be enabled automatically in your Virtual Network's region. There is no impact to your resources or associated charge for automatically enabling Network Watcher. With the vnet mentionedwe got the folowing resources:
+[![Screenshot](x_networkwatcher.jpg)
 
 
 * Virtual machine name test-vm8080
@@ -64,8 +65,8 @@ New-AzResourceGroupDeployment -Name buildTestVm `
 
 ###  Verify the build
 ####  Open putty and connect
-[![Screenshot](putty.jpg)
+[![Screenshot](x_putty.jpg)
 
 # 
 ### Build and steps
-[![Screenshot](setup_1.jpg)
+[![Screenshot](x_setup_1.jpg)
