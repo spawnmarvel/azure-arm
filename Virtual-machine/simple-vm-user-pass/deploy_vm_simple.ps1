@@ -25,15 +25,15 @@ $paramterFile = "C:\giti\azure-arm\Virtual-machine\simple-vm-user-pass\vm_paramt
 $userName = "testadmin100" # testAdmin100
 $passWordSecure = ConvertTo-SecureString "Thisisbadyes123" -AsPlainText -Force
 # test it
-# New-AzResourceGroupDeployment -Name buildTestVm `
-#  -ResourceGroupName $resourceGr.ResourceGroupName `
-#  -virtualNetworkId $vnetId `
-#  -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -WhatIf
-# verbose or debug
 New-AzResourceGroupDeployment -Name buildTestVm `
- -ResourceGroupName $resourceGr.ResourceGroupName `
- -virtualNetworkId $vnetId `
- -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -Verbose
+  -ResourceGroupName $resourceGr.ResourceGroupName `
+  -virtualNetworkId $vnetId `
+  -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -WhatIf
+# verbose or debug
+# New-AzResourceGroupDeployment -Name buildTestVm `
+# -ResourceGroupName $resourceGr.ResourceGroupName `
+# -virtualNetworkId $vnetId `
+# -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -Verbose
 
 
 

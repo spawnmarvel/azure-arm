@@ -4,6 +4,9 @@
 
 ### rg used, testit2-rg, vnet testit2-vnet
 
+#### A note about vnet
+#### When you create or update a virtual network in your subscription, Network Watcher will be enabled automatically in your Virtual Network's region. There is no impact to your resources or associated charge for automatically enabling Network Watcher.
+
 
 * Virtual machine name test-vm8080
 * Availability zone, 1
