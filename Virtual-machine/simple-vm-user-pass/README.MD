@@ -8,6 +8,7 @@
 * testit2-vnet
 
 ## 1.1  A note about vnet:
+[![Screenshot](x_networkwatcher.jpg)
 ## When you create or update a virtual network in your subscription, Network Watcher will be enabled automatically in your Virtual Network's region. There is no impact to your resources or associated charge for automatically enabling Network Watcher. With the vnet mentionedwe got the folowing resources:
 
 
