@@ -1,6 +1,9 @@
 Write-Host "Started deploy simple vm" -ForegroundColor Green
 Write-Host "Create the rg (it is automatically created if you have not) and vnet (you must create) before you start" -ForegroundColor Yellow
 Write-Host "Get it from subscription and feed it to virtualNetworkId if you need to keep it safe" -ForegroundColor Yellow
+Write-Host "Must also use a random generator for -Name on deploy"
+$ran = Get-Random -Maximum 100
+$deployName = "buildTestVm1" + $ran
 # connect to azure first
 # Connect-AzAccount
 $sub = Get-AzSubscription
@@ -35,12 +38,12 @@ $paramterFile = "C:\giti\azure-arm\Virtual-machine\simple-vm-user-pass\vm_paramt
 $userName = "testadmin100" # testAdmin100
 $passWordSecure = ConvertTo-SecureString "Thisisbadyes123" -AsPlainText -Force
 # test it
-New-AzResourceGroupDeployment -Name buildTestVm `
+New-AzResourceGroupDeployment -Name $deployName `
   -ResourceGroupName $resourceGr.ResourceGroupName `
   -virtualNetworkId $vnetId `
   -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -WhatIf
 # verbose or debug for actually deploying it
-# New-AzResourceGroupDeployment -Name buildTestVm `
+# New-AzResourceGroupDeployment -Name $deployName `
 # -ResourceGroupName $resourceGr.ResourceGroupName `
 # -virtualNetworkId $vnetId `
 # -TemplateFile $templateFile -TemplateParameterFile $paramterFile -adminUsername $userName -adminPassword $passWordSecure -Verbose

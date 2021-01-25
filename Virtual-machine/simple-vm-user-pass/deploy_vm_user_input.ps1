@@ -37,7 +37,7 @@ Write-Host $resourceGr.ResourceGroupName $resourceGr.Location
 # Public inbound ports, allow SHH 22
 # Boot diagnostics, Disable
 # Download template for automation
-# extensions is emptty now, will add when template works!!!
+# extensions is empty now, will add when template works!!!
 
 
 
