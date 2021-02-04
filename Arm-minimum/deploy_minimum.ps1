@@ -1,3 +1,4 @@
+# comment from bash
 $rgName = "testit2-rg"
 $ran = Get-Random -Maximum 100
 $deployName = "buildTestVm1" + $ran
