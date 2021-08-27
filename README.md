@@ -16,4 +16,6 @@ Stuff about Azure, ARM and shell
 #### "ps1" | Out-File get_storage.ps1
 ####  New-Item -ItemType File -Path \.gitignore.
 
+### Recap after bash 27.08.2021
+
 
